@@ -1,0 +1,13 @@
+Step 1: argc
+[stack]
+Step 2: #symbol main
+EXE
+Step 3: printf
+LIBC
+Step 4: malloc
+[heap]
+Step 5: null
+Step 6: #symbol constant
+EXE
+Step 7: stack pointer
+[stack]

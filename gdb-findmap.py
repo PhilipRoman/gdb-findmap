@@ -1,12 +1,10 @@
-import itertools
-
 class FindMap(gdb.Command):
 	"""Find memory mapping, source file and offset corresponding to address"""
 	def __init__(self):
 		super(FindMap, self).__init__("findmap", gdb.COMMAND_USER, gdb.COMPLETE_EXPRESSION)
 	
 	def invoke(self, arg, from_tty):
-		arg = int(gdb.parse_and_eval('(uintptr_t)('+arg+')'))
+		arg = int(gdb.parse_and_eval('(unsigned long long)('+arg+')'))
 		lines = gdb.execute("info proc mappings", from_tty, True).split('\n')
 		header = ''
 		foundStart = False
