@@ -1,0 +1,19 @@
+name: Test
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install GDB
+      run: sudo apt install -yy gdb
+    - name: Test
+      run: cd tests && ./test.sh

@@ -1,4 +1,5 @@
 #!/bin/sh
+# Note: tests probably won't work outside of glibc/x86_64 based systems
 set -e
 cc -g helloworld.c
 gdb --batch --nx \
